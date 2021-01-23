@@ -4,7 +4,12 @@
     .stats .grid,
     .cli .grid,
     .cloud .grid,
-    .footer .grid {
+    .footer .grid,
+    .feature-head .grid,
+    .feature-sub-head .grid,
+    .docs-head .grid,
+    .feature-main .grid,
+    .docs-main .grid{
         grid-template-columns: 1fr;
         grid-template-rows: 1fr;
     }
@@ -22,6 +27,31 @@
         grid-row: 1;
         grid-column: 1;
     }
+
+    .feature-head,
+    .feature-sub-head,
+    .docs-head {
+        text-align: center;
+    }
+
+    .feature-head img,
+    .feature-sub-head img,
+    .docs-head img {
+        justify-self: center;
+    }
+
+    .feature-main .grid .card:nth-child(1),
+    .feature-main .grid .card:nth-child(2),
+    .feature-main .grid .card:nth-child(3),
+    .feature-main .grid .card:nth-child(6){
+        grid-column: 1;
+    }
+    .showcase-text {
+        animation: slideInFromTop 1s ease-out;
+    }
+    .showcase-form {
+        animation: slideInFromBottom 1s ease-out;
+    }
 }
 
 
@@ -36,5 +66,8 @@
     .navbar ul {
         background-color: rgba(0,0,0,.2);
         padding: 10px;
+    }
+    .showcase-form {
+        width: 90%;
     }
 }

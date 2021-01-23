@@ -5,6 +5,8 @@
     --secondary-color: #1c3fa8;
     --dark-color: #002240;
     --light-color: #f4f4f4;
+    --success-color: #5cb85c;
+    --error-color: #d9534f;
 }
 
 * {
@@ -39,6 +41,12 @@ p {
 
 img {
     width: 100%;
+}
+
+pre,code {
+    background: #333;
+    color: #fff;
+    padding: 10px;
 }
 
 /* NAVBAR */
@@ -88,10 +96,11 @@ img {
     position: relative;
     top: 60px;
     height: 350px;
-    width: 400px;
+    width: 100%;
     padding: 40px;
     z-index: 100;
     justify-self: flex-end;
+    animation: slideInFromRight 1s ease-out;
 }
 
 .showcase-form .form-control {
@@ -122,9 +131,14 @@ img {
     transform: skewY(-3deg);
 }
 
+.showcase-text {
+    animation: slideInFromLeft 1s ease-out;
+}
+
 /* stats */
 .stats {
     padding-top: 100px;
+    animation: slideInFromBottom 1s ease-out;
 }
 
 .stats .stats-heading {
@@ -179,7 +193,8 @@ img {
 }
 
 /* features */
-.feature-head img {
+.feature-head img,
+.docs-head img {
     width: 200px;
     justify-self: flex-end;
 }
@@ -209,9 +224,73 @@ img {
     grid-column: span 3;
 }
 
+/* docs section */
+.docs-main h3{
+    margin: 20px 0px;
+}
+
+.docs-main .grid {
+    grid-template-columns: 1fr, 2fr;
+    align-items: flex-start;
+}
+
+.docs-main nav li {
+    font-size: 17px;
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #ccc;
+}
+
+.docs-main nav ul li a{
+    color: rgb(47, 47, 47);
+}
+
+.docs-main a:hover {
+    font-weight: bold;
+}
+
 
 /* footer */
 
 footer .social a {
     margin: 0 10px;
+}
+
+
+/* ANIMATION */
+
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+@keyframes slideInFromRight {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+@keyframes slideInFromTop {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+@keyframes slideInFromBottom {
+    0% {
+        transform: translateY(100%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
 }
